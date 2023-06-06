@@ -3,5 +3,5 @@
 count = 0
 
 while (count <= 98):
-    print("count = 0x{:x}".format(count))
+    print("{} = 0x{:x}".format(count, count))
     count += 1
