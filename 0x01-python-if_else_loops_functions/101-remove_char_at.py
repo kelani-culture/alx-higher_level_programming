@@ -10,6 +10,6 @@ def remove_char_at(str, n):
 
     for i in str:
         if (i == str[n]):
-            str = str[:n] + [n + 1:]
+            str = str[:n] + str[n + 1:]
             break
     return (str)
