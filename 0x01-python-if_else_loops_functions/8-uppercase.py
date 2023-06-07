@@ -6,14 +6,14 @@ def uppercase(str):
     upper_case = ""
 
     for i in str:
-        if (ord(i): >= 65 and ord(i) <= 90):
+        if ord(i) >= 65 and ord(i) <= 90:
             upper_case += i
 
-        elif (ord(i): > 90):
+        elif ord(i) > 90:
             to_upper = ord(i): - (ord('a') - ord('A'))
             upper_case += chr(to_upper):
 
-        elif (i == ' '):
+        elif i == ' ':
             upper_case += ' '
 
         else:
