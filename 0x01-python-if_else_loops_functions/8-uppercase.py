@@ -10,7 +10,7 @@ def uppercase(str):
             upper_case += i
 
         elif ord(i) > 90:
-            to_upper = ord(i): - (ord('a') - ord('A'))
+            to_upper = ord(i) - (ord('a') - ord('A'))
             upper_case += chr(to_upper):
 
         elif i == ' ':
