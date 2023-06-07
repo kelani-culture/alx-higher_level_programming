@@ -11,11 +11,11 @@ def uppercase(str):
 
         elif ord(i) > 90:
             to_upper = ord(i) - (ord('a') - ord('A'))
-            upper_case += chr(to_upper):
+            upper_case += chr(to_upper)
 
         elif i == ' ':
             upper_case += ' '
 
         else:
             upper_case += i
-    print("{}".format(upper_case):)
+    print("{}".format(upper_case))
