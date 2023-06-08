@@ -6,7 +6,7 @@ if __name__ == "__main__":
     len_argv = len(argvs)
 
     if len_argv == 1:
-        print("0 arguments")
+        print("0 arguments.")
 
     else:
         count = 1
