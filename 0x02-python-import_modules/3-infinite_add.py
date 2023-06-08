@@ -9,7 +9,7 @@ if (argc == 1):
 
 else:
     count = 0
-    for argv in argvs]1:]:
+    for argv in argvs[1:]:
         int_argv = int(argv)
         count += int_argv
     print(count)
