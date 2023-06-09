@@ -10,7 +10,8 @@ if __name__ == "__main__":
 
     else:
         count = 1
-        print(f"{len_argv - 1} argument:" if len_argv == 2 else f"{len_argv - 1} arguments:")
+        print(f"{len_argv - 1} argument:" if len_argv == 2\
+else f"{len_argv - 1} arguments:")
         for argv in argvs[1:]:
             print(f"{count}: {argv}")
             count += 1
