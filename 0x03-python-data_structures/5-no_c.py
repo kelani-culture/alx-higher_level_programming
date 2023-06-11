@@ -6,6 +6,6 @@ def no_c(my_string):
 
     while count < len(my_string) - 1:
         if (my_string[count] == 'c') or (my_string == 'C'):
-            my_string  = my_string[:count] + my_string[count + 1:]
+            my_string = my_string[:count] + my_string[count + 1:]
         count += 1
     return my_string
