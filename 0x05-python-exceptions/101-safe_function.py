@@ -10,7 +10,7 @@ def safe_function(fct, *args):
 
     except (ZeroDivisionError, IndexError, TypeError, ValueError) as e:
         sys.stderr.write("Exceptions: ")
-        sys.stderr.write(e)
+        sys.stderr.write(str(e))
         sys.stderr.write("\n")
         return None
     else:
