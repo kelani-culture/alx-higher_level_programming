@@ -4,6 +4,7 @@
      a class Square that defines a square by
 """
 
+
 class Square:
     """
         A class object square
