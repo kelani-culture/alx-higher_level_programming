@@ -10,5 +10,6 @@ def safe_function(fct, *args):
 
     except (ZeroDivisionError, IndexError, TypeError) as e:
         print(f"Exception: {e}", file=sys.stderr)
+        return None
     else:
         return result
