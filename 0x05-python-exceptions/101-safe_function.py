@@ -8,7 +8,7 @@ def safe_function(fct, *args):
         n1, n2 = args
         result = fct(n1, n2)
 
-    except (ZeroDivisionError, IndexError, TypeError, ValueError) as e:
+    except (ZeroDivisionError, IndexError, TypeError) as e:
         print(f"Exception: {e}", file=sys.stderr)
         return None
     else:
