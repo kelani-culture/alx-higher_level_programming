@@ -5,4 +5,7 @@
 """
 
 class Rectangle:
+    """
+        Rectangle class
+    """
     ...
