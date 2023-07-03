@@ -10,7 +10,7 @@ class Rectangle:
         A class that defines a Rectangle
     """
     def __init__(self, width=0, height=0):
-        self.width = width
+        self.__width = width
         self.__height = height
 
     # private instance attribute for height
