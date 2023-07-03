@@ -53,5 +53,5 @@ class Rectangle:
         return 2 * (self.__height + self.__width)
 
     def __str__(self):
-        rect = [['#' for _ in range(self.__width)] for _ in range(self.__height)]
-        return "\n".join(["".join(row) for row in rect])
+        rt = [['#' for _ in range(self.__width)] for _ in range(self.__height)]
+        return "\n".join(["".join(row) for row in rt])
