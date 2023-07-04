@@ -28,7 +28,6 @@ class Rectangle:
             raise TypeError("height must be an integer")
         elif value < 0:
             raise ValueError("height must be >= 0")
-
         self.__height = value
 
     # private instance attribute for width
@@ -42,7 +41,6 @@ class Rectangle:
             raise TypeError("width must be an integer")
         elif value < 0:
             raise ValueError("width must be >= 0")
-
         self.__width = value
 
     # calculate area of rectangle
@@ -53,9 +51,8 @@ class Rectangle:
     def perimeter(self):
         if self.__width == 0 or self.__height == 0:
             return 0
-
         return 2 * (self.__height + self.__width)
- 
+
     # print string representation
     def __str__(self):
         if self.__height <= 0 or self.__width <= 0:
@@ -66,7 +63,7 @@ class Rectangle:
     def __repr__(self):
         return "Rectangle(2, 4)"
 
-    # delete instances created 
+    # delete instances created
     def __del__(self):
         print("Bye rectangle...")
         Rectangle.number_of_instances -= 1
