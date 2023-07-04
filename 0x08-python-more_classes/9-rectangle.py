@@ -82,6 +82,7 @@ class Rectangle:
                 return rect_1
             else:
                 return rect_2
+
     # print in square using '#'
     @classmethod
     def square(cls, size=0):
