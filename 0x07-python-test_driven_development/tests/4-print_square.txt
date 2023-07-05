@@ -1,0 +1,41 @@
+>>> square = __import__('4-print_square').print_square
+>>> square(4)
+####
+####
+####
+####
+>>> square(9)
+#########
+#########
+#########
+#########
+#########
+#########
+#########
+#########
+#########
+>>> square(None)
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+>>> square("a")
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
+>>> square(0)
+>>> square(2, 3)
+Traceback (most recent call last):
+...
+TypeError: print_square() takes 1 positional argument but 2 were given
+>>> square()
+Traceback (most recent call last):
+...
+TypeError: print_square() missing 1 required positional argument: 'size'
+>>> square(1.8**10**308)
+Traceback (most recent call last):
+...
+OverflowError: (34, 'Numerical result out of range')
+>>> square(1.08)
+Traceback (most recent call last):
+...
+TypeError: size must be an integer
