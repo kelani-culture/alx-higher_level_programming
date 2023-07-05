@@ -49,3 +49,7 @@ TypeError: matrix_divided() missing 1 required positional argument: 'div'
 Traceback (most recent call last):
 ...
 TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> mat_div([[123.422, 1.8*10**308, 3, 12.43443], [2.9012, 4, 5, 89], [1, 0.999999999, 120.3333333, 9.0]], 0)
+Traceback (most recent call last):
+...
+ZeroDivisionError: division by zero
