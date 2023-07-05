@@ -9,6 +9,9 @@ def matrix_divided(matrix, div):
     """
         A function that divides a matrix of integer
     """
+    if type(div) is not int and type(div) is not float:
+        raise TypeError("div must be a number")
+
     for list_ in matrix:
         if isinstance(list_, list) is not True:
             raise TypeError("matrix must be a matrix (list of lists)"
