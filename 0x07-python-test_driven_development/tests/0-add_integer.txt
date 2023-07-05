@@ -1,0 +1,21 @@
+>>> import sys
+>>> sys.path.append("..")
+>>> new_method = __import__("0-add_integer").add_integer
+>>> new_method(10, 4)
+14
+>>> new_method(10.0, 4)
+14
+>>> new_method('10', 4)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+>>> new_method(None, 4)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+>>> new_method(None, None)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
+>>> new_method(-2, -2)
+-4
