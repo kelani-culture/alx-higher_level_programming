@@ -6,13 +6,15 @@
 
 def text_indentation(text):
 
-    """
-        index text
-    """
     if not isinstance(text, str):
         raise TypeError("text must be a string")
 
-    word = text.split()
-    for wrd in word:
-        end = '\n\n' if ('.' in wrd or '?' in wrd or  ':' in wrd) else ' '
-        print(wrd, end=end)
+    if ' ' in text:
+        word = text.split()
+        for wrd in word:
+            end = '\n\n' if ('.' in wrd or '?' in wrd or  ':' in wrd) else ' '
+            print(wrd, end=end)
+    else:
+        for t in text:
+            end = '\n\n' if ('.' == t or '?' == t or ':' in t) else ''
+            print(t, end=end)

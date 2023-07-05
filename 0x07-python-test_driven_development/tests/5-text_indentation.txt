@@ -1,40 +1,12 @@
 >>> text_ind = __import__('5-text_indentation').text_indentation
->>> text_ind("""Lorem ipsum dolor sit amet, consectetur adipiscing elit. \
-... Quonam modo? Utrum igitur tibi litteram videor an totas paginas commovere? \
-... Non autem hoc: igitur ne illud quidem. Fortasse id optimum, sed ubi illud: \
-... Plus semper voluptatis? Teneo, inquit, finem illi videri nihil dolere. \
-... Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum \
-... rationi oboediens. Si id dicis, vicimus. Inde sermone vario sex illa a Dipylo \
-... stadia confecimus. Sin aliud quid voles, postea. Quae animi affectio suum \
-... cuique tribuens atque hanc, quam dico. Utinam quidem dicerent alium alio \
-... beatiorem! Iam ruinas videres""")
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+>>> text_ind('Holberton. School? How are you: John')
+Holberton.
 
-Quonam modo?
+School?
 
-Utrum igitur tibi litteram videor an totas paginas commovere?
+How are you:
 
-Non autem hoc:
-
-igitur ne illud quidem.
-
-Fortasse id optimum, sed ubi illud:
-
-Plus semper voluptatis?
-
-Teneo, inquit, finem illi videri nihil dolere.
-
-Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens.
-
-Si id dicis, vicimus.
-
-Inde sermone vario sex illa a Dipylo stadia confecimus.
-
-Sin aliud quid voles, postea.
-
-Quae animi affectio suum cuique tribuens atque hanc, quam dico.
-
-Utinam quidem dicerent alium alio beatiorem! Iam ruinas videres >>>
+John >>>
 >>> text_ind(123)
 Traceback (most recent call last):
 ...
@@ -43,3 +15,14 @@ TypeError: text must be a string
 Traceback (most recent call last):
 ...
 TypeError: text must be a string
+>>> text_ind("Holberton School")
+Holberton School >>>
+>>> text_ind()
+Traceback (most recent call last):
+...
+TypeError: text_indentation() missing 1 required positional argument: 'text'
+>>> text_ind(" ")
+>>> text_ind("Holberton.School")
+Holberton.
+
+School>>>
