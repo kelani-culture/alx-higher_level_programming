@@ -39,3 +39,7 @@ OverflowError: (34, 'Numerical result out of range')
 Traceback (most recent call last):
 ...
 TypeError: size must be an integer
+>>> square(-1)
+Traceback (most recent call last):
+...
+ValueError: size must be >= 0
