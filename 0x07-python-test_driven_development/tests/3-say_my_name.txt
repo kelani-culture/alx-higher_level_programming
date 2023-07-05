@@ -1,0 +1,20 @@
+>>> say_my_name("Love")
+>>> say_my_name("Love", "Evelin")
+My name is Love Evelin
+>>> say_my_name("Love")
+My name is Love
+>>> say_my_name(None)
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+>>> say_my_name(False)
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+>>> say_my_name("True")
+My name is True
+>>> say_my_name(123)
+Traceback (most recent call last):
+...
+TypeError: first_name must be a string
+>>>
