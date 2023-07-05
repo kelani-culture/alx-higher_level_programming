@@ -1,12 +1,12 @@
 >>> text_ind = __import__('5-text_indentation').text_indentation
 >>> text_ind('Holberton. School? How are you: John')
 Holberton.
-
+<BLANKLINE>
 School?
-
+<BLANKLINE>
 How are you:
-
-John >>>
+<BLANKLINE>
+John 
 >>> text_ind(123)
 Traceback (most recent call last):
 ...
@@ -15,8 +15,6 @@ TypeError: text must be a string
 Traceback (most recent call last):
 ...
 TypeError: text must be a string
->>> text_ind("Holberton School")
-Holberton School >>>
 >>> text_ind()
 Traceback (most recent call last):
 ...
@@ -24,5 +22,7 @@ TypeError: text_indentation() missing 1 required positional argument: 'text'
 >>> text_ind(" ")
 >>> text_ind("Holberton.School")
 Holberton.
-
-School>>>
+<BLANKLINE>
+School
+>>> text_ind("HolbertonSchool")
+HolbertonSchool

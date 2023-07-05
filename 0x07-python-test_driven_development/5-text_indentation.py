@@ -4,6 +4,7 @@
     Program that indent a line
 """
 
+
 def text_indentation(text):
 
     if not isinstance(text, str):
@@ -12,7 +13,7 @@ def text_indentation(text):
     if ' ' in text:
         word = text.split()
         for wrd in word:
-            end = '\n\n' if ('.' in wrd or '?' in wrd or  ':' in wrd) else ' '
+            end = '\n\n' if ('.' in wrd or '?' in wrd or ':' in wrd) else ' '
             print(wrd, end=end)
     else:
         for t in text:
