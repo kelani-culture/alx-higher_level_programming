@@ -1,21 +1,35 @@
->>> import sys
->>> sys.path.append("..")
->>> new_method = __import__("0-add_integer").add_integer
->>> new_method(10, 4)
-14
->>> new_method(10.0, 4)
-14
->>> new_method('10', 4)
+>>> add_int = __import__('0-add_integer').add_integer
+>>> add_int()
+Traceback (most recent call last):
+...
+TypeError: add_integer() missing 1 required positional argument: 'a'
+>>> add_int(1)
+99
+>>> add_int('1', 4)
 Traceback (most recent call last):
 ...
 TypeError: a must be an integer
->>> new_method(None, 4)
+>>> add_int(1.22222222222222222222222222222222222222222222222222, 90)
+91
+>>> add_int(3.9, 9.0)
+12
+>>> add_int(60.7**4, 12)
+13575478
+>>> add_int(60.899238438247822325825434232545432536253652645647746376657578768798989789565646345521423545326437675878655650870896575464345231125436754689770789768657454343523424, 12)
+72
+>>> add_int(1.8*10**308, 12)
+Traceback (most recent call last):
+...
+OverflowError: cannot convert float infinity to integer
+>>> add_int('aa', '23')
 Traceback (most recent call last):
 ...
 TypeError: a must be an integer
->>> new_method(None, None)
+>>> add_int('.9', 23)
 Traceback (most recent call last):
 ...
 TypeError: a must be an integer
->>> new_method(-2, -2)
--4
+>>> add_int(None, None)
+Traceback (most recent call last):
+...
+TypeError: a must be an integer
