@@ -6,7 +6,7 @@ School?
 <BLANKLINE>
 How are you:
 <BLANKLINE>
-John 
+John
 >>> text_ind(123)
 Traceback (most recent call last):
 ...
@@ -26,3 +26,7 @@ Holberton.
 School
 >>> text_ind("HolbertonSchool")
 HolbertonSchool
+>>> text_ind("Holiday.School")
+Holiday.
+<BLANKLINE>
+School
