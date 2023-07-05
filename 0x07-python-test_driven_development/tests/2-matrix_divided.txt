@@ -1,0 +1,24 @@
+>>> mat_div = __import__("2-matrix_divided").matrix_divided
+>>> a = [[1, 2, 3], [4, 5, 6], [2, 3, 4]]
+>>> mat_div(a, 2)
+[[0.5, 1.0, 1.5], [2.0, 2.5, 3.0], [1.0, 1.5, 2.0]]
+>>> mat_div(a, 0)
+Traceback (most recent call last):
+...
+ZeroDivisionError: division by zero
+>>> mat_div(a, -1)
+[[-1.0, -2.0, -3.0], [-4.0, -5.0, -6.0], [-2.0, -3.0, -4.0]]
+>>> b = [[1, 2, 3], [2, 3], [3, 4, 5]]
+>>> mat_div(b, 3)
+Traceback (most recent call last):
+...
+TypeError: Each row of the matrix must have the same size
+>>> c = [['1', '2', '3'], [1, 2, 3], [3, 4, 5]]
+>>> mat_div(c, 2)
+Traceback (most recent call last):
+...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+>>> d = [[1.0, 2.0, 3.5, 4.4], [1, 3, 4, 5], [3.3, 4.5, 0, 2]]
+>>> mat_div(d, 3)
+[[0.33, 0.67, 1.17, 1.47], [0.33, 1.0, 1.33, 1.67], [1.1, 1.5, 0.0, 0.67]]
+>>>
