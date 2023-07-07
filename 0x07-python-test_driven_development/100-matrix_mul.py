@@ -16,16 +16,16 @@ def matrix_mul(m_a, m_b):
             raise ValueError("m_b can't be empty")
 
     for list_1 in m_a:
-        if len(list_1) == 0:
-            raise ValueError("m_a can't be empty")
         if not isinstance(list_1, list):
             raise TypeError("m_a must be a list")
+        if len(list_1) == 0:
+            raise ValueError("m_a can't be empty")
 
     for list_2 in m_b:
-        if len(list_2) == 0:
-            raise ValueError("m_b can't be empty")
         if not isinstance(list_2, list):
             raise TypeError("m_b must be a list")
+        if len(list_2) == 0:
+            raise ValueError("m_b can't be empty")
     for idx, list_1 in enumerate(m_a):
         for idx, integer in enumerate(list_1):
             if (type(integer) is not int and type(integer) is not float):
