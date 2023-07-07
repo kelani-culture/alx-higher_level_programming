@@ -1,0 +1,55 @@
+>>> matrix_mul = __import__('100-matrix_mul').matrix_mul
+>>> matrix_mul()
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: matrix_mul() missing 2 required positional arguments: 'm_a' and 'm_b'
+>>> matrix_mul([[1, 2, 3]])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+TypeError: matrix_mul() missing 1 required positional argument: 'm_b'
+>>> x = [[12, 7, 3],
+...      [4, 5, 6],
+...      [7, 8, 9]]
+>>> y = [[5, 8, 1, 2],
+...       [6, 7, 3, 0],
+...      [4, 5, 9, 1]]
+>>> matrix_mul(x, y)
+[[114, 160, 60, 27], [74, 97, 73, 14], [119, 157, 112, 23]]
+>>> matrix_mul([['a', '1', 2, 3], [1, 2, 3, 4]], [[1, 2, 3, 4]])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/null/alx-python/0x07-python-test_driven_development/100-matrix_mul.py", line 25, in matrix_mul
+    raise ValueError("m_a should contain only integers or floats")
+ValueError: m_a should contain only integers or floats
+>>> matrix_mul([[]], [[]])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/null/alx-python/0x07-python-test_driven_development/100-matrix_mul.py", line 13, in matrix_mul
+    raise ValueError("m_a can't be empty")
+ValueError: m_a can't be empty
+>>> matrix_mul([[1, 2, 3], [4, 5, 6]], [[]])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/null/alx-python/0x07-python-test_driven_development/100-matrix_mul.py", line 19, in matrix_mul
+    raise ValueError("m_b can't be empty")
+ValueError: m_b can't be empty
+>>> matrix_mul([[1, 2, 3], [4, 5, 6]], [])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/null/alx-python/0x07-python-test_driven_development/100-matrix_mul.py", line 9, in matrix_mul
+    raise ValueError("m_b can't be empty")
+ValueError: m_b can't be empty
+>>> matrix_mul([[1, 2, 3], [4, 5, 6]], [[1, 2, 3], [4, 5, 6, 7]])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/null/alx-python/0x07-python-test_driven_development/100-matrix_mul.py", line 36, in matrix_mul
+    raise TypeError("each row of m_b must be of the same size")
+TypeError: each row of m_b must be of the same size
+>>> matrix_mul([[1, 2, 3]], [[1, 2, 3], [1, 2, 3]])
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  File "/home/null/alx-python/0x07-python-test_driven_development/100-matrix_mul.py", line 38, in matrix_mul
+    return mul_matrix(m_a, m_b)
+  File "/home/null/alx-python/0x07-python-test_driven_development/100-matrix_mul.py", line 52, in mul_matrix
+    raise ValueError("m_a and m_b can't be multiplied")
+ValueError: m_a and m_b can't be multiplied
