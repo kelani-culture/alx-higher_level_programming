@@ -41,12 +41,11 @@ class Rectangle(BaseGeometry):
 
 class Square(Rectangle):
     def __init__(self, size):
-        self.integer_validator("size", size)
-        self.__size = size
+        super().__init__(size, size)
 
     # calculate the area of a square
     def area(self):
-        return self.__size ** 2
+        return super().area()
 
     def __str__(self):
-        return f"[Square] {self.__size}/{self.__size}"
+        return super().__str__()
