@@ -11,5 +11,4 @@ class MyList(list):
     """
     lst = []
     def print_sorted(self):
-        MyList.lst.append(self)
         return list.sort(self)
