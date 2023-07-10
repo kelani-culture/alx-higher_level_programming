@@ -5,4 +5,7 @@
 
 
 class BaseGeometry:
+    """
+        A basae gepmetry class
+    """
     ...
