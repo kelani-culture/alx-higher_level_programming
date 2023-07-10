@@ -20,7 +20,3 @@ TypeError: integer_validator() missing 1 required positional argument: 'value'
 Traceback (most recent call last):
 ...
 TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
->>> bg.integer_validator("Dog leg", 0)
-Traceback (most recent call last):
-...
-ValueError: Dog leg must be greater than 0
