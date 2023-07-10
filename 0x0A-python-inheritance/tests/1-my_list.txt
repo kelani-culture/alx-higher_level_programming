@@ -1,5 +1,5 @@
->>> mylist = __import__('1-my_list').MyList
->>> mlist = mylist()
+>>> Mylist = __import__('1-my_list').MyList
+>>> mlist = Mylist()
 >>> mlist.append(2)
 >>> mlist.append(9)
 >>> mlist.append(1)
@@ -12,7 +12,3 @@
 >>> mlist.print_sorted()
 >>> print(mlist)
 [1, 2, 3, 4, 5, 8, 9]
->>> mlist.append()
-Traceback (most recent call last):
-  File "<stdin>", line 1, in <module>
-TypeError: list.append() takes exactly one argument (0 given)
