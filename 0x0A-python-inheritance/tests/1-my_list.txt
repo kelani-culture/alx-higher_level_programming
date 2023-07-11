@@ -17,4 +17,6 @@
 [9, 2, 3]
 >>> mlist.print_sorted()
 [2, 3, 9]
->>> 
+>>> bg = MyList()
+>>> bg.print_sorted()
+[]
