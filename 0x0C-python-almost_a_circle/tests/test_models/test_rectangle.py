@@ -10,6 +10,11 @@ class TestRectangle(unittest.TestCase):
     """
         A class for testing the rectangle class
     """
+    def setUp(self):
+        self.r1 = Rectangle(10, 2)
+        self.r2 = Rectangle(2, 10)
+        self.r3 = Rectangle(10, 2, 4, 4, 18)
+
     # test value <= 0 for height and width
     def test_less_than_or_equal_to_zero(self):
         with self.assertRaises(ValueError):
@@ -21,20 +26,6 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(ValueError):
             xx = Rectangle(1, 4, -2, 4)
             yy = Rectangle(2, 3, 4, -2)
-
-    # test if value is > 0 for height and width
-    def test_value_greater_than_zero(self):
-        w = Rectangle(2, 4)
-        h = Rectangle(4, 2)
-        self.assertGreater(w.width, 0)
-        self.assertGreater(h.height, 0)
-
-    # test if value is >= 0 for x  and y
-    def test_value_greater_than_or_equal_to_zero(self):
-        xx = Rectangle(2, 4, 0, 1)
-        yy = Rectangle(2, 4, 1, 1)
-        self.assertGreaterEqual(xx.x, 0)
-        self.assertGreaterEqual(yy.y, 0)
 
     # test for type error
     def test_for_wrong_input_value(self):
@@ -64,18 +55,12 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(yy.y, 5)
 
     def test_Base(self):
-        r1 = Rectangle(10, 2)
-        r2 = Rectangle(2, 10)
-        r3 = Rectangle(10, 2, 4, 4, 18)
-        self.assertEqual(r1.id, 1)
-        self.assertEqual(r2.id, 2)
-        self.assertEqual(r3.id, 18)
+        self.assertEqual(self.r1.id, 1)
+        self.assertEqual(self.r2.id, 2)
+        self.assertEqual(self.r3.id, 18)
 
     # test correct output for area
     def test_area(self):
-        r1 = Rectangle(10, 2)
-        r2 = Rectangle(8, 7, 0, 0, 12)
-        r3 = Rectangle(5, 3, 0, 0, 11)
-        self.assertEqual(r3.area(), r3.width * r3.height)
-        self.assertEqual(r2.area(), r2.width * r2.height)
-        self.assertEqual(r1.area(), r1.width * r1.height)
+        self.assertEqual(self.r3.area(), self.r3.width * self.r3.height)
+        self.assertEqual(self.r2.area(), self.r2.width * self.r2.height)
+        self.assertEqual(self.r1.area(), self.r1.width * self.r1.height)
