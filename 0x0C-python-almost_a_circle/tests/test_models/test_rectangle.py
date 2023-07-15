@@ -71,3 +71,11 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(r2.id, 2)
         self.assertEqual(r3.id, 18)
 
+    # test correct output for area
+    def test_area(self):
+        r1 = Rectangle(10, 2)
+        r2 = Rectangle(8, 7, 0, 0, 12)
+        r3 = Rectangle(5, 3, 0, 0, 11)
+        self.assertEqual(r3.area(), r3.width * r3.height)
+        self.assertEqual(r2.area(), r2.width * r2.height)
+        self.assertEqual(r1.area(), r1.width * r1.height)
