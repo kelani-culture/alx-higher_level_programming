@@ -19,6 +19,7 @@ class Base:
             Base.__nb_objects += 1
             self.id = Base.__nb_objects
 
+    # write a list of dictionaryies as json string
     @staticmethod
     def to_json_string(list_dictionaries):
         if list_dictionaries and len(list_dictionaries) > 0:
@@ -26,6 +27,7 @@ class Base:
         else:
             return json.dumps("[]")
 
+    # write to a json string
     @classmethod
     def save_to_file(cls, list_objs):
         data = []
@@ -34,3 +36,10 @@ class Base:
 
         with open(f"{cls.__name__}.json", "w") as fi:
             fi.write(cls.to_json_string(data))
+
+    # return a list of json string
+    @staticmethod
+    def from_json_string(json_string):
+        if json_string and len(json_string) > 0:
+            return json.loads(json_string)
+        return []

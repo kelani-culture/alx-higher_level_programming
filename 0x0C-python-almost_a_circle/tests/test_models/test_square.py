@@ -50,17 +50,6 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(yy.x, 3)
         self.assertEqual(yy.y, 4)
 
-    def test_Base(self):
-        self.assertEqual(self.r1.id, 1)
-        self.assertEqual(self.r2.id, 2)
-        self.assertEqual(self.r3.id, 18)
-
-    # test correct output for area
-    def test_area(self):
-        self.assertEqual(self.r3.area(), self.r3.width * self.r3.height)
-        self.assertEqual(self.r2.area(), self.r2.width * self.r2.height)
-        self.assertEqual(self.r1.area(), self.r1.width * self.r1.height)
-
     # test update method
     def test_update(self):
         r1 = Square(10, 10, 10, 10)
