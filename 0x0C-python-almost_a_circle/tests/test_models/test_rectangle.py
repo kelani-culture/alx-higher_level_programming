@@ -83,3 +83,9 @@ class TestRectangle(unittest.TestCase):
             r1.update(89, 1, 0)
             r1.update(89, 1, 2, -1)
             r1.update(89, 3, 2, 1, -2)
+
+    # test to dictionary
+    def test_to_dictionary(self):
+        s1 = Rectangle(10, 2, 1, 4, 3)
+        self.assertEqual(s1.to_dictionary(), {'id': 3, 'width': 10,
+                                              'height': 2, 'x': 1, 'y': 4})

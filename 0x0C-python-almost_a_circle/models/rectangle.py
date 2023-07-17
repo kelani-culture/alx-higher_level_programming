@@ -78,7 +78,6 @@ class Rectangle(Base):
             for count in range(self.__y):
                 print()
         for count in range(self.__height):
-            #end = "\n" if count != self.__width - 1 else ""
             print(" " * self.__x, end="")
             print("#" * self.__width)
 
@@ -101,8 +100,6 @@ class Rectangle(Base):
                 self.id, self.width, self.height, self.x, self.y = args
 
         elif kwargs:
-            if 'name' in kwargs.keys():
-                self.name = kwargs.get('name')
             if 'id' in kwargs.keys():
                 self.id = kwargs.get('id')
             if 'height' in kwargs.keys():
@@ -113,3 +110,8 @@ class Rectangle(Base):
                 self.x = kwargs.get('x')
             if 'y' in kwargs.keys():
                 self.y = kwargs.get('y')
+
+    # return as dictionary
+    def to_dictionary(self):
+        return {'id': self.id, 'width': self.width, 'height': self.height,
+                'x': self.x, 'y': self.y}
