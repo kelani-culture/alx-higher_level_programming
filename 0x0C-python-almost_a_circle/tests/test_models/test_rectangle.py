@@ -64,3 +64,22 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(self.r3.area(), self.r3.width * self.r3.height)
         self.assertEqual(self.r2.area(), self.r2.width * self.r2.height)
         self.assertEqual(self.r1.area(), self.r1.width * self.r1.height)
+    # test update method
+    def test_update(self):
+        r1 = Rectangle(10, 10, 10, 10)
+        r1.update(8)
+        self.assertEqual(r1.id, 8)
+        r1.update(89, 2, 2)
+        self.assertEqual(r1.width, 2)
+        self.assertEqual(r1.height, 2)
+        with self.assertRaises(TypeError):
+            r1.update(89, 2, 2, '1')
+            r1.update(89, 3, 4, '6')
+            r1.update(89, [1], 3)
+            r1.update(88, 2, 4, (1))
+            r1.update(89, 2, 3, 5, {7})
+        with self.assertRaises(ValueError):
+            r1.update(89, -1)
+            r1.update(89, 1, 0)
+            r1.update(89, 1, 2, -1)
+            r1.update(89, 3, 2, 1, -2)
