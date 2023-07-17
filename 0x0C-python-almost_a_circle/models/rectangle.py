@@ -74,7 +74,12 @@ class Rectangle(Base):
 
     # display the rectangle shape
     def display(self):
-        for _ in range(self.__height):
+        if self.__y > 0 and (self.__height and self.__width):
+            for count in range(self.__y):
+                print()
+        for count in range(self.__height):
+            #end = "\n" if count != self.__width - 1 else ""
+            print(" " * self.__x, end="")
             print("#" * self.__width)
 
     def __str__(self):
