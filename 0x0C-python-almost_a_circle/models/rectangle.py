@@ -87,7 +87,7 @@ class Rectangle(Base):
                 f" - {self.__width}/{self.__height}")
 
     # update the valuse of width, height, id, x, y
-    def update(self, *args):
+    def update(self, *args, **kwargs):
         if args:
             if len(args) == 1:
                 self.id = args[0]
@@ -99,3 +99,17 @@ class Rectangle(Base):
                 self.id, self.width, self.height, self.x = args
             elif len(args) == 5:
                 self.id, self.width, self.height, self.x, self.y = args
+
+        elif kwargs:
+            if 'name' in kwargs.keys():
+                self.name = kwargs.get('name')
+            if 'id' in kwargs.keys():
+                self.id = kwargs.get('id')
+            if 'height' in kwargs.keys():
+                self.height = kwargs.get('height')
+            if 'width' in kwargs.keys():
+                self.width = kwargs.get('width')
+            if 'x' in kwargs.keys():
+                self.x = kwargs.get('x')
+            if 'y' in kwargs.keys():
+                self.y = kwargs.get('y')
