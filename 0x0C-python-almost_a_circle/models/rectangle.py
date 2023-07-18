@@ -1,4 +1,4 @@
-#!/usr/bin/pyrhon3
+#!/usr/bin/python3
 """
     A program that create a rectangle class
 """
