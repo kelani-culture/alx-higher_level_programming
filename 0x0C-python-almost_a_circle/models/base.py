@@ -95,13 +95,78 @@ class Base:
         except FileNotFoundError:
             return []
 
-    # write to a csv file
-    def save_to_file_csv(cls, list_objs):
+    @staticmethod
+    def obj_to_tuple(class_name, list_obj):
         """
-            Write a file to a csv file
+            tuple
         """
-        filename = f"{cls.__name__}.csv"
-
+        if class_name == "Square":
+            return (list_obj.size, list_obj.x, list_obj.y, list_obj.id)
+        else:
+            return (list_obj.width, list_obj.height,
+                    list_obj.x, list_obj.y, list_obj.id)
+    @classmethod
+    def save_to_file_csv(cls, list_obj):
+        """
+            save file to csv
+        """
+        filename = cls.__name__ +".csv"
         with open(filename, 'w') as csv_file:
-            csv_w = csv.writer(Base.to_json_string(list_objs))
-            return csv_w
+            csv_writer = csv.writer(csv_file)
+            for val in list_obj:
+                row = Base.obj_to_tuple(cls.__name__, val)
+                csv_writer.writerow(row)
+
+    @classmethod
+    def from_csv(cls, objs):
+        """
+            from csv file
+        """
+        class_name = cls.__name__
+        # instantiate Square class
+        if class_name == "Square" and len(objs) == 1:
+            size = int(objs[0])
+            return cls(size)
+        elif class_name == "Square" and len(objs) == 2:
+            size, x = int(objs[0]), int(objs[1])
+            return cls(size, x)
+        elif class_name == "Square" and len(objs) == 3:
+            size, x, y = int(objs[0]), int(objs[1]), int(objs[2])
+            return cls(size, x, y)
+        elif class_name == "Square" and len(objs) == 3:
+            size, x, y = int(objs[0]), int(objs[1]), int(objs[2])
+            id = int(objs[3])
+            return cls(size, x, y, id)
+
+        else:
+            if len(objs) ==  2:
+                width, height = int(objs[0]), int(objs[1])
+                return cls(width, height)
+            elif len(objs) == 3:
+                width, height, x = int(objs[0]), int(objs[1]), int(objs[2])
+                return cls(width, height, x)
+            elif len(objs) == 4:
+                width, height, x = int(objs[0]), int(objs[1]), int(objs[2])
+                y = int(objs[3])
+                return cls(width, height, x, y)
+            elif len(objs) == 5:
+                width, height, x = int(objs[0]), int(objs[1]), int(objs[2])
+                y, id = int(objs[3]), int(objs[4])
+                return cls(width, height, x, y, id)
+
+    @classmethod
+    def load_from_file_csv(cls):
+        """
+            Load file from csv
+        """
+        filename =  cls. __name__+".csv"
+        list_obj = []
+        try:
+            with open(filename) as csv_file:
+                csv_reader = csv.reader(csv_file)
+                for row in csv_reader:
+                    obj = cls.from_csv(row)
+                    list_obj.append(obj)
+            return list_obj
+        except FileNotFoundError:
+            return list_obj
