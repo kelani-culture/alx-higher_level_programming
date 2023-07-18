@@ -7,7 +7,20 @@ from models.base import Base
 
 class Rectangle(Base):
     """
-        A rectangle class defines a rectangle
+        Initialize a new Rectangle instance.
+
+        Parameters:
+                width (int): The width of the new Rectangle.
+            height (int): The height of the new Rectangle.
+            x (int): The x coordinate of the new Rectangle.
+            y (int): The y coordinate of the new Rectangle.
+            id (int): The identity of the new Rectangle.
+
+        Raises:
+            TypeError: If width or height is not an integer.
+            ValueError: If width or height is less than or equal to zero.
+            TypeError: If x or y is not an integer.
+            ValueError: If x or y is less than zero.
     """
     def __init__(self, width, height, x=0, y=0, id=None):
         self.width = width
@@ -70,10 +83,16 @@ class Rectangle(Base):
 
     # calculate area of rectangle
     def area(self):
+        """
+            calculate area of shape
+        """
         return self.__width * self.__height
 
     # display the rectangle shape
     def display(self):
+        """
+            display the shape using #
+        """
         if self.__y > 0 and (self.__height and self.__width):
             for count in range(self.__y):
                 print()
@@ -82,11 +101,17 @@ class Rectangle(Base):
             print("#" * self.__width)
 
     def __str__(self):
+        """
+            return string
+        """
         return (f"[Rectangle] ({self.id}) {self.__x}/{self.__y}" +
                 f" - {self.__width}/{self.__height}")
 
     # update the valuse of width, height, id, x, y
     def update(self, *args, **kwargs):
+        """
+            Update attribute
+        """
         if args:
             if len(args) == 1:
                 self.id = args[0]
@@ -113,5 +138,8 @@ class Rectangle(Base):
 
     # return as dictionary
     def to_dictionary(self):
+        """
+            return attribut as dictionary
+        """
         return {'id': self.id, 'width': self.width, 'height': self.height,
                 'x': self.x, 'y': self.y}

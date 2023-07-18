@@ -4,8 +4,21 @@ from models.rectangle import Rectangle
 
 
 class Square(Rectangle):
-    """ A class square that defines
-        properties of a square
+    """
+        Initialize a new Rectangle instance.
+
+        Parameters:
+            width (int): The width of the new Rectangle.
+            height (int): The height of the new Rectangle.
+            x (int): The x coordinate of the new Rectangle.
+            y (int): The y coordinate of the new Rectangle.
+            id (int): The identity of the new Rectangle.
+
+        Raises:
+            TypeError: If width or height is not an integer.
+            ValueError: If width or height is less than or equal to zero.
+            TypeError: If x or y is not an integer.
+            ValueError: If x or y is less than zero.
     """
     def __init__(self, size, x=0, y=0, id=None):
         self.size = size
@@ -30,6 +43,9 @@ class Square(Rectangle):
 
     # update square attribute
     def update(self, *args, **kwargs):
+        """
+            Update the square attribute
+        """
         if args:
             if len(args) == 1:
                 self.id = args[0]
@@ -52,5 +68,8 @@ class Square(Rectangle):
 
     # return as dictionary
     def to_dictionary(self):
+        """
+            Write a to dictionary
+        """
         return {'id': self.id, 'size': self.size,
                 'x': self.x, 'y': self.y}
