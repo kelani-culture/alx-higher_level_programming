@@ -1,14 +1,28 @@
 #!/usr/bin/python3
-import json
 """
    A program that define a base class
    for each child to inherits
 """
+import json
+import csv
 
 
 class Base:
-    """
-        A base class for shape object
+    
+    """ The base class for other classes.
+
+        This class serves as a parent class that provides common functionality and attributes
+        for its derived classes.
+
+        Attributes:
+            id (int): The identity of the instance.
+
+        Methods:
+            __init__: Initialize a new instance of the Base class.
+            save_to_file: save to a json file
+            to_json_string: convert python object to a json string
+            from_json_string: convert json object to python object
+            create: create a dummy instance for each class
     """
     __nb_objects = 0
 
@@ -83,3 +97,15 @@ class Base:
                 return [cls.create(**di) for di in list_dict]
         except FileNotFoundError:
             return []
+
+    # write to a csv file
+    def save_to_file_csv(cls, list_objs):
+        """
+            Write a file to a csv file
+        """
+        filename = f"{cls.__name__}.csv"
+
+        with open(filename, 'w') as csv_file:
+            csv_w = csv.writer(Base.to_json_string(list_objs))
+            return csv_w
+    
