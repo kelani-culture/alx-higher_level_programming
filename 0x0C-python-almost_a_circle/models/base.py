@@ -105,12 +105,13 @@ class Base:
         else:
             return (list_obj.width, list_obj.height,
                     list_obj.x, list_obj.y, list_obj.id)
+
     @classmethod
     def save_to_file_csv(cls, list_obj):
         """
             save file to csv
         """
-        filename = cls.__name__ +".csv"
+        filename = cls.__name__ + ".csv"
         with open(filename, 'w') as csv_file:
             csv_writer = csv.writer(csv_file)
             for val in list_obj:
@@ -139,7 +140,7 @@ class Base:
             return cls(size, x, y, id)
 
         else:
-            if len(objs) ==  2:
+            if len(objs) == 2:
                 width, height = int(objs[0]), int(objs[1])
                 return cls(width, height)
             elif len(objs) == 3:
@@ -159,7 +160,7 @@ class Base:
         """
             Load file from csv
         """
-        filename =  cls. __name__+".csv"
+        filename = cls. __name__+".csv"
         list_obj = []
         try:
             with open(filename) as csv_file:
