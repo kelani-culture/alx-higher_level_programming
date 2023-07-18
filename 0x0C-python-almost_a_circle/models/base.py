@@ -8,12 +8,9 @@ import csv
 
 
 class Base:
- 
     """ The base class for other classes.
-
         This class serves as a parent class that provides common
         functionality and attribute for its derived classes.
-
         Attributes:
             id (int): The identity of the instance.
 
@@ -107,4 +104,4 @@ class Base:
 
         with open(filename, 'w') as csv_file:
             csv_w = csv.writer(Base.to_json_string(list_objs))
-            return csv_w 
+            return csv_w
