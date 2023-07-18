@@ -45,7 +45,7 @@ class Base:
         if list_dictionaries and len(list_dictionaries) > 0:
             return json.dumps(list_dictionaries)
         else:
-            return json.dumps("[]")
+            return "[]"
 
     # write to a json string
     @classmethod

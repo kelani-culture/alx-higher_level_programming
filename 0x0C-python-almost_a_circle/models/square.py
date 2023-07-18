@@ -8,8 +8,7 @@ class Square(Rectangle):
         Initialize a new Rectangle instance.
 
         Parameters:
-            width (int): The width of the new Rectangle.
-            height (int): The height of the new Rectangle.
+            size (int): The size of the new Rectangle.
             x (int): The x coordinate of the new Rectangle.
             y (int): The y coordinate of the new Rectangle.
             id (int): The identity of the new Rectangle.
