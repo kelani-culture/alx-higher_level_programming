@@ -171,3 +171,36 @@ class Base:
             return list_obj
         except FileNotFoundError:
             return list_obj
+
+    @staticmethod
+    def draw(list_rectangles, list_squares):
+        """
+            Draws a shape
+        """
+        turt = turtle.Turtle()
+        for rec in list_rectangles:
+            turt.penup()
+            turt.goto(rec.x, rec.y)
+            turt.pendown()
+            turt.color("yellow")
+            turt.begin_fill()
+            for _ in range(2):
+                turt.forward(rec.width)
+                turt.right(90)
+                turt.forward(rec.height)
+                turt.right(90)
+            turt.end_fill()
+
+        for squares in list_squares:
+            turt.penup()
+            turt.goto(squares.x, squares.y)
+            turt.pendown()
+            turt.color("red")
+            turt.begin_fill()
+            for _ in range(4):
+                turt.forward(squares.size)
+                turt.right(90)
+            turt.end_fill()
+
+        turt.hideturtle()
+        turtle.done()
