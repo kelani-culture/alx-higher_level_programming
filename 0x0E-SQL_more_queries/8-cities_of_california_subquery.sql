@@ -1,5 +1,5 @@
 -- select all cities in carlifornia
 SELECT cities.id as id, cities.name
-FROM cities
-WHERE cities.state_id = (SELECT id FROM states WHERE name = 'California')
+FROM cities, states
+WHERE states.name = "Carlifornia"
 ORDER BY cities.id ASC;
