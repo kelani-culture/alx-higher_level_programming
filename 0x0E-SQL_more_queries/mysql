@@ -1,1 +1,1 @@
-GRANT ALL PRIVILEGES ON *.* TO 'user_0d_1'@'localhost'; -hlocalhost -uroot -p
+CREATE DATABASE hbtn_0d_tvshows -u null -p
