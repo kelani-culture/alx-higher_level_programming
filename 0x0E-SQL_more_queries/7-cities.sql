@@ -5,7 +5,7 @@ CREATE DATABASE IF NOT EXISTS hbtn_0d_usa;
 USE hbtn_0d_usa;
 
 -- create a table cities
-CREATE TABLE cities(
+CREATE TABLE IF NOT EXISTS cities(
   id INT NOT NULL PRIMARY KEY,
   state_id INT NOT NULL,
   name VARCHAR(256) NOT NULL,
