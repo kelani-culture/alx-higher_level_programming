@@ -6,7 +6,7 @@ USE hbtn_0d_usa;
 
 -- create a table
 CREATE TABLE IF NOT EXISTS states(
-  id INT NOT NULL AUTO INCREMENT UNIQUE,
+  id INT NOT NULL UNIQUE AUTO INCREMENT,
   name VARCHAR(256),
   PRIMARY KEY(id)
 );
