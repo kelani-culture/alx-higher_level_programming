@@ -1,7 +1,7 @@
 -- script that select all title dexter genre from database
 -- hbtn_0d_tvshows
 
-USE hbtn_0d_tvshows;
+USE DISTINCT hbtn_0d_tvshows;
 SELECT
     tv_genres.name AS name
     FROM tv_show_genres
