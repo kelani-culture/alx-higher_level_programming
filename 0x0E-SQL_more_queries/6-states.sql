@@ -1,12 +1,12 @@
--- create a database
+-- Create the database if it doesn't exist
 CREATE DATABASE IF NOT EXISTS hbtn_0d_usa;
 
--- use the database created
+-- Use the hbtn_0d_usa database
 USE hbtn_0d_usa;
 
--- create a table
-CREATE TABLE IF NOT EXISTS states(
-  id INT NOT NULL UNIQUE AUTO INCREMENT
-  name VARCHAR(256) NOT NULL,
- PRIMARY KEY(id),
+-- Create the states table if it doesn't exist
+CREATE TABLE IF NOT EXISTS states (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(256) NOT NULL
 );
+
