@@ -1,4 +1,7 @@
--- genre by title
+-- script that select all title dexter genre from database
+-- hbtn_0d_tvshows
+
+USE hbtn_0d_tvshows;
 SELECT tv_genres.name as name
 FROM tv_shows
 INNER JOIN tv_show_genres
