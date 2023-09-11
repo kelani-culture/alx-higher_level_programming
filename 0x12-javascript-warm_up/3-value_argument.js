@@ -1,7 +1,10 @@
 #!/usr/bin/node
 const arg = process.argv;
-if (arg.length < 3) {
-  console.log('No argument');
-} else {
+try {
+  if (arg[2] === undefined) {
+    throw new Error('No argument');
+  }
   console.log(arg[2]);
+} catch (error) {
+  console.error(error.message);
 }
