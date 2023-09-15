@@ -13,7 +13,7 @@ if info and len(info) == 4:
                            passwd=info[2], db=info[3])
     cur = conn.cursor()
     cur.execute("SELECT * FROM states WHERE name LIKE 'N%'\
-                ORDER BY id")
+                ORDER BY states.id")
     state_list = cur.fetchall()
     for state in state_list:
         print(state)
