@@ -18,7 +18,7 @@ if __name__ == '__main__':
     curs = db.cursor()
     state_name = info[4]
     curs.execute("SELECT * FROM states WHERE name= %(name)s ORDER BY id",
-                 {'name':state_name})
+                 {'name': state_name})
 
     rows = curs.fetchall()
     for row in rows:
