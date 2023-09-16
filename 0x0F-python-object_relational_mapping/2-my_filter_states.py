@@ -3,32 +3,28 @@
 A script that takes in an argument and display all the
 its value if matches
 """
-import MySQLdb
-import sys
+if __name__ == '__main__':
+    from sys import argv
+    import MySQLdb as mysql
 
-# Get user input
-if len(sys.argv) == 5:
-    mysql_username = sys.argv[1]
-    mysql_password = sys.argv[2]
-    database_name = sys.argv[3]
-    state_name = sys.argv[4]
+    try:
+        db = mysql.connect(host='localhost', port=3306, user=argv[1],
+                           passwd=argv[2], db=argv[3])
+    except Exception:
+        print('Failed to connect to the database')
+        exit(0)
 
-    # Establish a connection
-    conn = MySQLdb.connect(host="localhost", port=3306, user=mysql_username,
-                           passwd=mysql_password, db=database_name)
-    cur = conn.cursor()
+    searched = argv[4]
 
-    # Define the query with a placeholder
-    query = "SELECT * FROM states WHERE name = %s ORDER BY id ASC"
+    cursor = db.cursor()
 
-    # Execute the query with the provided value
-    cur.execute(query, (state_name,))
+    cursor.execute("SELECT * FROM states WHERE name = BINARY '{:s}' \
+                    ORDER BY id ASC;".format(searched))
 
-    # Fetch and print the results
-    results = cur.fetchall()
-    for row in results:
+    result_query = cursor.fetchall()
+
+    for row in result_query:
         print(row)
 
-    # Close the cursor and connection
-    cur.close()
-    conn.close()
+    cursor.close()
+    db.close()
