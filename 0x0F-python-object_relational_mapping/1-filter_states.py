@@ -3,20 +3,26 @@
     list all states that start with
     the letter N
 """
-import MySQLdb
-import sys
-
-info = sys.argv
 if __name__ == '__main__':
-    if info and len(info) == 4:
-        conn = MySQLdb.connect(host="localhost", port=3306, user=info[1],
-                               passwd=info[2], db=info[3])
-        cur = conn.cursor()
-        cur.execute("SELECT * FROM states WHERE name LIKE 'N%'\
-                    ORDER BY states.id")
-        state_list = cur.fetchall()
-        for state in state_list:
-            print(state)
-        
-        cur.close()
-        conn.close()
+    from sys import argv
+    import MySQLdb as mysql
+
+    try:
+        db = mysql.connect(host='localhost', port=3306, user=argv[1],
+                           passwd=argv[2], db=argv[3])
+    except Exception:
+        print('Failed to connect to the database')
+        sys.exit(1)
+
+    cursor = db.cursor()
+
+    cursor.execute("SELECT * FROM states \
+                    WHERE name LIKE BINARY 'N%' ORDER BY id ASC;")
+
+    result_query = cursor.fetchall()
+
+    for row in result_query:
+        print(row)
+
+    cursor.close()
+    db.close()
