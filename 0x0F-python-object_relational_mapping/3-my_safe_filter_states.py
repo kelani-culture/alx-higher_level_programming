@@ -1,5 +1,7 @@
 #!/usr/bin/python3
-
+"""
+    write a safe SQL to prevent injection attack
+"""
 if __name__ == '__main__':
     import MySQLdb
     import sys
@@ -15,8 +17,8 @@ if __name__ == '__main__':
 
     curs = db.cursor()
     state_name = info[4]
-    curs.execute("SELECT * FROM states WHERE name=? ORDER BY id",
-                 (state_name,))
+    curs.execute("SELECT * FROM states WHERE name= %(name)s ORDER BY id",
+                 {'name':state_name})
 
     rows = curs.fetchall()
     for row in rows:
