@@ -6,7 +6,6 @@ import MySQLdb
 import sys
 
 if __name__ == '__main__':
-    
     try:
         info = sys.argv
 
