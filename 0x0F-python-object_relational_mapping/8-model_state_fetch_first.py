@@ -28,15 +28,13 @@ def first_state(user, passwd, db):
 
     if state:
         print(f"{state.id}: {state.name}")
-    
     else:
         print("Nothing")
-
     session.close()
+
 
 if __name__ == "__main__":
     if len(argv) != 4:
         print("username password database missing")
         exit(1)
     first_state(argv[1], argv[2], argv[3])
-
