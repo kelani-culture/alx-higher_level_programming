@@ -16,22 +16,27 @@ def first_state(user, passwd, db):
     """
     try:
         engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".
-                               format(user, passwd, db))
+                               format(user, passwd, db),
+                               pool_pre_ping=True)
         Session = sessionmaker(bind=engine)
         session = Session()
     except Exception:
         print("invalid value for user, passwd, db")
         exit(1)
 
-    first_state = session.query(State).limit(1).all()
+    state = session.query(State).first()
 
-    if first_state:
-        for state in first_state:
-            print(f"{state.id}: {state.name}")
+    if state:
+        print(f"{state.id}: {state.name}")
+    
+    else:
+        print("Nothing")
 
+    session.close()
 
 if __name__ == "__main__":
     if len(argv) != 4:
         print("username password database missing")
         exit(1)
     first_state(argv[1], argv[2], argv[3])
+
