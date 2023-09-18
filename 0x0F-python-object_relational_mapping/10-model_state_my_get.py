@@ -21,7 +21,8 @@ def state_id(user, passwd, db, state):
         exit(1)
     pattern = re.match(r"^[a-zA-Z]+$", state)
     if pattern:
-        state_obj = session.query(State.id).filter(State.name == state).scalar()
+        state_obj = (session.query(State.id).
+                     filter(State.name == state).scalar())
         if state_obj:
             print(state_obj)
         else:
