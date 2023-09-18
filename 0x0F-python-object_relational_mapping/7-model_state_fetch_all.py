@@ -10,7 +10,8 @@ from sys import argv
 
 def list_states(username, passwd, db):
     try:
-        engine = create_engine(f"mysql+mysqldb://{username}:{passwd}@localhost:3306/{db}")
+        engine = create_engine(f"mysql+mysqldb://{username}:" +
+                               f"{passwd}@localhost:3306/{db}")
 
         Session = sessionmaker(bind=engine)
         session = Session()
@@ -19,9 +20,9 @@ def list_states(username, passwd, db):
         exit(1)
 
     state_list = session.query(State).order_by(State.id).all()
-    
     for state in state_list:
         print(f"{state.id}: {state.name}")
+
 
 if __name__ == "__main__":
     if len(argv) != 4:
