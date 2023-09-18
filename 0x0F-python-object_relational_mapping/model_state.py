@@ -16,7 +16,7 @@ if len(argv) != 4:
     exit(1)
 
 try:
-    engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".\
+    engine = create_engine("mysql+mysqldb://{}:{}@localhost:3306/{}".
                            format(argv[1], argv[2], argv[3]))
 except Exception as e:
     print(e)
@@ -25,14 +25,17 @@ except Exception as e:
 Session = sessionmaker(bind=engine)
 session = Session()
 Base = declarative_base()
+
+
 class State(Base):
     """
         A model for the state table
     """
     __tablename__ = "states"
-    id = Column(Integer,primary_key=True,
+    id = Column(Integer, primary_key=True,
                 autoincrement=True, nullable=False)
     name = Column(String(128), nullable=False)
+
 
 if __name__ == '__main__':
     Base.metadata.create_all(engine)
