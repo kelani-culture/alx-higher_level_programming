@@ -23,6 +23,11 @@ def add_state(user, passwd, db):
     session.add(state)
     session.commit()
 
+    new_state_id = (session.query(State.id).
+                    filter(State.name == "Louisiana").scalar())
+    if new_state_id:
+        print(new_state_id)
+
 
 if __name__ == "__main__":
     add_state(argv[1], argv[2], argv[3])
