@@ -11,7 +11,7 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 
 
-if len(argv) != 4:
+if len(argv) < 4:
     print("user password and database missing")
     exit(1)
 
