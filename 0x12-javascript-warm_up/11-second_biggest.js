@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-function secondMax(array) {
+function secondMax (array) {
   array.sort();
   return array[array.length - 2];
 }
