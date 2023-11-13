@@ -1,13 +1,12 @@
 #!/usr/bin/node
 
-function callMeMoby(x, theFunction){
-
-    while (x > 0) {
-        theFunction()
-        x--;
-    }
+function callMeMoby (x, theFunction) {
+  while (x > 0) {
+    theFunction();
+    x--;
+  }
 }
 
-module.exports ={
-    callMeMoby
-}
+module.exports = {
+  callMeMoby
+};
