@@ -2,7 +2,7 @@
 
 function secondMax(array) {
   array.sort();
-  return array[array.length - 2]
+  return array[array.length - 2];
 }
 
 const arg = process.argv;
