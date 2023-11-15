@@ -22,5 +22,4 @@ function concatFile(files) {
         });
     }
 }
-console.log(files)
 concatFile(files)
