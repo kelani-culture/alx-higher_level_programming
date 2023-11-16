@@ -1,6 +1,5 @@
 #!/usr/bin/python3
 from sqlalchemy import create_engine
-from sqlalchemy.orm import declarative_base
 import sys
 from model_state import Base
 
