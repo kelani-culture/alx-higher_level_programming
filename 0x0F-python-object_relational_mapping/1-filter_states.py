@@ -13,8 +13,12 @@ def connect_db(db_credential):
 
     cur = db.cursor()
     cur.execute("""
-                 SELECT * FROM states;
+                 SELECT *
+                 FROM states
+                 WHERE name LIKE 'N%'
+                 ORDER BY id;
                  """)
+
     for states in cur.fetchall():
         print(states)
 
