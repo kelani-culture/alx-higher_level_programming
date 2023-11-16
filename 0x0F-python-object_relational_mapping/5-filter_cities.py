@@ -12,24 +12,24 @@ def connect_db(db_credential):
         sys.exit()
 
     cur = db.cursor()
-    states = arg[4]
+    state_name = arg[4]
     cur.execute("""
-                 SELECT *
-                 FROM states
-                 WHERE name = %s
-                 ORDER BY id;
-                 """, (states,))
+                 SELECT c.name
+                 FROM cities as c
+                 JOIN states as s ON s.id = state_id
+                 WHERE s.name = %s
+                 ORDER BY c.id;
+                 """, (state_name,))
 
     filtered_states = cur.fetchall()
-    for states in filtered_states:
-        print(states)
+    state = ', '.join(' '.join(map(str, state)) for state in filtered_states)
+    print(state)
 
 
 arg = sys.argv
-
 if len(arg) != 5:
-    print("please provide complete credential\
-          dbusername password database and state name")
+    print("please provide complete credential eg\
+           dbusername, password, database and state name")
     sys.exit()
 
 if __name__ == "__main__":
