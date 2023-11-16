@@ -15,9 +15,9 @@ def connect_db(db_credential):
     cur.execute("""
                  SELECT *
                  FROM states
-                 WHERE name LIKE 'N%'
+                 WHERE name = '{}'
                  ORDER BY id;
-                 """)
+                 """.format(arg[4]))
 
     for states in cur.fetchall():
         print(states)
@@ -25,7 +25,7 @@ def connect_db(db_credential):
 
 arg = sys.argv
 
-if len(arg) != 4:
+if len(arg) != 5:
     print("please provide complete credential dbusername password database")
     sys.exit()
 
