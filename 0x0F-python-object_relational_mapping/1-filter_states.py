@@ -27,7 +27,4 @@ arg = sys.argv
 
 
 if __name__ == "__main__":
-    if len(arg) != 4:
-        print("please provide complete credential dbusername password database")
-        sys.exit()
     connect_db(arg)
