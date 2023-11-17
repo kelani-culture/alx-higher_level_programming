@@ -2,7 +2,7 @@
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from model_state import Base, States
+from model_state import Base, State
 
 """
 retrieve state entry from database
@@ -25,7 +25,7 @@ if __name__ == "__main__":
         Base.metadata.create_all(engine)  # Ensure tables are created
 
         with Session() as session:
-            states = session.query(States).order_by(States.id).all()
+            states = session.query(State).order_by(State.id).all()
             for state in states:
                 print(f"{state.id}: {state.name}")
 

@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 from sqlalchemy import create_engine
-from model_state import Base, States
+from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
 import sys
 """
@@ -24,7 +24,7 @@ if __name__ == "__main__":
 
     try:
         with Session() as session:
-            state = session.query(States).order_by(States.id).first()
+            state = session.query(State).order_by(State.id).first()
             if state:
                 print(f'{state.id}: {state.name}')
             else:

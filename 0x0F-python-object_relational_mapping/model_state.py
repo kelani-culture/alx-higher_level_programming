@@ -7,7 +7,7 @@ the database
 Base = declarative_base()
 
 
-class States(Base):
+class State(Base):
     """
     state class model
     id: id (int)
