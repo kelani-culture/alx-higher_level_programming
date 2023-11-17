@@ -4,6 +4,9 @@ import sys
 
 
 def connect_db(db_credential):
+    """
+    A function for connecting to  a daatabase
+    """
     try:
         db = MySQLdb.connect(user=arg[1], password=arg[2], database=arg[3],
                              port=3306)
