@@ -27,5 +27,3 @@ if __name__ == '__main__':
         for state in delete_state:
             session.delete(state)
             session.commit()
-        if not delete_state:
-            print("No state with id of 2")
