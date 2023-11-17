@@ -22,9 +22,10 @@ if __name__ == '__main__':
     Base.metadata.create_all(engine)
 
     with Session() as session:
-        update_state = session.query(State).filter(State.id == 2).first()
-        if update_state:
-            update_state.name = 'New Mexico'
+        delete_state = session.query(State).filter(State.name.contains('a')).\
+            all()
+        for state in delete_state:
+            session.delete(state)
             session.commit()
-        else:
+        if not delete_state:
             print("No state with id of 2")
