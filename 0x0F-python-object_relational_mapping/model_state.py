@@ -1,7 +1,8 @@
 from sqlalchemy.orm import declarative_base
 from sqlalchemy import Integer, Column, String
 """
-Define database models class
+Define database models class the class fort
+the database 
 """
 Base = declarative_base()
 
@@ -9,6 +10,8 @@ Base = declarative_base()
 class States(Base):
     """
     state class model
+    id: id (int)
+    name name  (str)
     """
     __tablename__ = "states"
     id = Column(Integer, primary_key=True, nullable=False)
