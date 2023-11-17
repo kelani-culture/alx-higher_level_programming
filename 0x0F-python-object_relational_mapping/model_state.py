@@ -1,10 +1,10 @@
 #!/usr/bin/python3
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy import Integer, Column, String
 """
 Define database models class the class fort
 the database
 """
+from sqlalchemy.ext.declarative import declarative_base
+from sqlalchemy import Integer, Column, String
 Base = declarative_base()
 
 

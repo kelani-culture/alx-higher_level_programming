@@ -1,10 +1,9 @@
 #!/usr/bin/python3
-from sqlalchemy import Integer, Column, String, ForeignKey
-from model_state import Base
-
 """Create the model for city
     that contains the city attribute
 """
+from sqlalchemy import Integer, Column, String, ForeignKey
+from model_state import Base
 
 
 class City(Base):

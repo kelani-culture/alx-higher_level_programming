@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+Define database models class the class fort
+the database
+"""
 from sqlalchemy import Column, Integer, String, ForeignKey
 from sqlalchemy.orm import relationship
 from relationship_state import Base
