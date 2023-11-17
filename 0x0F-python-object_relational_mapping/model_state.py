@@ -3,7 +3,7 @@ from sqlalchemy.orm import declarative_base
 from sqlalchemy import Integer, Column, String
 """
 Define database models class the class fort
-the database 
+the database
 """
 Base = declarative_base()
 

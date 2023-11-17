@@ -7,8 +7,13 @@ from model_state import Base
 """
 
 
-
 class City(Base):
+    """
+    attribute of class city
+    id: int
+    name: string
+    state_id: foreign key
+    """
     __tablename__ = 'cities'
     id = Column(Integer, nullable=False,
                 primary_key=True, autoincrement=True)
