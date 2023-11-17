@@ -32,4 +32,4 @@ if __name__ == "__main__":
         if get_state:
             print(get_state.id)
         else:
-            print('Not Found')
+            print('Not found')
