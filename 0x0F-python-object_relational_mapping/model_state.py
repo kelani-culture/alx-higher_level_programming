@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 from sqlalchemy.orm import declarative_base
 from sqlalchemy import Integer, Column, String
 """
@@ -14,5 +15,5 @@ class State(Base):
     name name  (str)
     """
     __tablename__ = "states"
-    id = Column(Integer, primary_key=True, nullable=False)
+    id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
     name = Column(String(128), nullable=False)
