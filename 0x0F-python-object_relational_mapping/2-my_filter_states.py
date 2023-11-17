@@ -25,6 +25,9 @@ def connect_db(db_credential):
 
 arg = sys.argv
 
+if len(arg) != 5:
+    print("please provide complete credential dbusername password database")
+    sys.exit()
 
 if __name__ == "__main__":
     connect_db(arg)
