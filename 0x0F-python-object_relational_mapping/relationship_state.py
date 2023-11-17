@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-from sqlalchemy.orm import declarative_base, relationship
+from sqlalchemy.ext.declarative import declarative_base, relationship
 from sqlalchemy import Integer, Column, String
 """
 Define database models class the class fort
