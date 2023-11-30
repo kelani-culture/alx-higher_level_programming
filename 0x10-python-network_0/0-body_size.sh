@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 # print the content length in bytes
 hostname=$1
 port=$2
