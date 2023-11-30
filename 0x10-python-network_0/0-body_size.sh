@@ -1,6 +1,5 @@
 #!/bin/bash
 # print the content length in bytes
-hostname=$1
-port=$2
+url=$1
 
-curl -so /dev/null "$hostname":"$port" -w '%{size_header}'
+curl -so /dev/null "$url" -w '%{size_download}'
