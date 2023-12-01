@@ -5,7 +5,6 @@ letter and sends a POST request
 """
 import sys
 import requests
-import json.decoder
 
 if __name__ == "__main__":
     q = sys.argv[1] if len(sys.argv) > 1 else ""
@@ -17,11 +16,9 @@ if __name__ == "__main__":
         response.raise_for_status()
 
         result = response.json()
-
         if result:
             print(f"[{result.get('id')}] {result.get('name')}")
         else:
             print("No result")
-
-    except json.decoder.JSONDecodeError:
-        print("Not a valid JSON")
+    except requests.exceptions.RequestException as e:
+            print(f"Not a valid json")
