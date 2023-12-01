@@ -7,4 +7,4 @@ import requests
 
 endpoints = "https://alx-intranet.hbtn.io/stat"
 request = requests.get('https://alx-intranet.hbtn.io/stat')
-print(request.json())
+print(request)
