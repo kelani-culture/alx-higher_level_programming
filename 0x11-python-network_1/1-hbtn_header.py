@@ -11,4 +11,4 @@ arg = sys.argv
 url = urllib.request.Request(arg[1])
 with urllib.request.urlopen(url) as response:
     headers = response.headers
-    print(headers['X-Request-Id'])
+    print(headers.get('X-Request-Id'))
