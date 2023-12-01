@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """
 a Python script that takes in a URL and an email,
-sends a POST request to the passed URL 
+sends a POST request to the passed URL
 """
 import urllib.request
 import urllib.parse
@@ -19,4 +19,3 @@ if __name__ == "__main__":
     with urllib.request.urlopen(req) as response:
         body = response.read()
         print(body.decode('UTF-8'))
-
