@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+a Python script that takes in a URL and an email,
+sends a POST request to the passed URL 
+"""
 import urllib.request
 import urllib.parse
 import sys
@@ -13,5 +17,6 @@ if __name__ == "__main__":
     request = new_data.encode('ascii')
     req = urllib.request.Request(url, request)
     with urllib.request.urlopen(req) as response:
-        print('url')
         body = response.read()
+        print(body.decode('UTF-8'))
+
