@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 import urllib.request
-#a script that fetches https://alx-intranet.hbtn.io/status
+# a script that fetches https://alx-intranet.hbtn.io/status
 url = urllib.request.Request('https://alx-intranet.hbtn.io/status')
 with urllib.request.urlopen(url) as response:
     body = response.read()
