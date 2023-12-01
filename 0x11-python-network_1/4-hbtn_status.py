@@ -5,6 +5,7 @@ https://alx-intranet.hbtn.io/status
 """
 import requests
 
-endpoints = "https://alx-intranet.hbtn.io/stat"
-request = requests.get('https://alx-intranet.hbtn.io/stat')
-print(request.json())
+endpoints = "https://alx-intranet.hbtn.io/status"
+request = requests.get(endpoints)
+print(f"Body Response:\n\t- type: {type(request.text)}")
+print(f"\t- content: {request.text}")
