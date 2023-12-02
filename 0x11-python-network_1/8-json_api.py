@@ -10,15 +10,12 @@ if __name__ == "__main__":
     q = sys.argv[1] if len(sys.argv) > 1 else ""
     params = {'q': q}
     endpoint = "http://0.0.0.0:5000/search_user"
-
+    req = requests.get("http://0.0.0.0:5000/search_user", params=params)
     try:
-        response = requests.post(endpoint, params=params)
-        response.raise_for_status()
-
-        result = response.json()
-        if result:
-            print(f"[{result.get('id')}] {result.get('name')}")
-        else:
+        res = req.json()
+        if not res:
             print("No result")
-    except requests.exceptions.RequestException as e:
-            print(f"Not a valid json")
+        else:
+            print(f"[{res['id']}] {res['name']}")
+    except Exception:
+        print("Not a valid JSON")
