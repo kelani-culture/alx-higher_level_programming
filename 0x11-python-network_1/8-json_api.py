@@ -7,18 +7,18 @@ import sys
 import requests
 
 if __name__ == "__main__":
-    q = sys.argv[1] if len(sys.argv) > 1 else ""
-    params = {'q': q}
-    endpoint = "http://0.0.0.0:5000/search_user"
-
+    if len(sys.argv) > 1:
+        q = sys.argv[1]
+    else:
+        q = ""
+    url = "http://0.0.0.0:5000/search_user"
+    params = {"q": q}
+    res = requests.post(url, data=params)
     try:
-        response = requests.post(endpoint, params=params)
-        response.raise_for_status()
-
-        result = response.json()
-        if result:
-            print(f"[{result.get('id')}] {result.get('name')}")
+        resjson = res.json()
+        if resjson:
+            print(f'[{resjson["id"]}] {resjson["name"]}')
         else:
             print("No result")
-    except requests.exceptions.RequestException as e:
-            print(f"Not a valid json")
+    except Exception:
+        print("Not a valid JSON")
