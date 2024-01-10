@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-# calculate the peak in the array
 
+"""
+Finding a peak in an array
+"""
 def find_peak(list_of_integers):
     """
     Finds a peak in a list of unsorted integers using binary search.
