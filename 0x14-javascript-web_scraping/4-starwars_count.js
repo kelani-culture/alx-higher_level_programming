@@ -8,7 +8,7 @@ const characterId = 18; // Character ID for Wedge Antilles
 // Make a request to the Star Wars API to get information about films
 request.get({ url: apiUrl, json: true }, (error, response, data) => {
   if (error) {
-    console.error('Error fetching data:', error);
+    console.error(error);
     return;
   }
 
