@@ -6,17 +6,18 @@ const apiUrl = process.argv[2];
 const characterId = 18; // Character ID for Wedge Antilles
 
 // Make a request to the Star Wars API to get information about films
-request.get({ apiUrl, json: true }, (error, response, data) => {
+request.get({ url: apiUrl, json: true }, (error, response, data) => {
   if (error) {
-    console.log(error);
+    console.error('Error fetching data:', error);
     return;
   }
 
-  const films = data.result;
-  const numberOfFilmWithWedge = films.filter((film) =>
-    film.character.include(
-      `https://swapi-api.alx-tools.com/api/people/${characterId}/`)
+  const films = data.results;
+
+  // Count the number of films where Wedge Antilles is present
+  const numberOfFilmsWithWedge = films.filter(film =>
+    film.characters.includes(`https://swapi-api.alx-tools.com/api/people/${characterId}/`)
   ).length;
 
-  console.log(numberOfFilmWithWedge);
+  console.log(`${numberOfFilmsWithWedge}`);
 });
